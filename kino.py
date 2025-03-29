@@ -8,13 +8,20 @@ from typing import Union
 from telebot import TeleBot, types
 from telebot.util import quick_markup
 
-# Bot konfiguratsiyasi
-BOT_TOKEN = "7922695836:AAE8HKBnS69kwytXK8JCMCb4RJR9HS-5HQ8"
-ADMIN_IDS = [6945434529 , 7162596430]
-CHANNEL_USERNAME = "@tarjima_k_inolar"  # Obuna bo'lish kerak bo'lgan kanal
-CHANNEL_LINK = "https://t.me/tarjima_k_inolar"  # Kanal linki
-DB_NAME = "media_bot.db"
-LOG_FILE = "bot.log"
+from dotenv import load_dotenv
+import os
+
+# .env faylni yuklash
+load_dotenv()
+
+# O'zgaruvchilarni olish
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+ADMIN_IDS = list(map(int, os.getenv("ADMIN_IDS").split(',')))  # Ro'yxatga aylantirish
+CHANNEL_USERNAME = os.getenv("CHANNEL_USERNAME")
+CHANNEL_LINK = os.getenv("CHANNEL_LINK")
+DB_NAME = os.getenv("DB_NAME")
+LOG_FILE = os.getenv("LOG_FILE")
+
 
 # Loglarni sozlash
 logging.basicConfig(
