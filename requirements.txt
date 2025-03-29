@@ -1,4 +1,4 @@
-python-telegram-bot==13.7
-python-dotenv==1.0.0
+python-telegram-bot>=13.7
+python-dotenv>=1.0.0
 sqlite3== (Python bilan birga keladi)
 logging== (Python bilan birga keladi)
