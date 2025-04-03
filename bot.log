@@ -1,116 +1,44 @@
-2025-03-29 20:56:10,303 - __main__ - INFO - Bot ishga tushmoqda...
-2025-03-29 20:56:44,592 - __main__ - INFO - Bot ishga tushmoqda...
-2025-03-29 20:57:17,756 - TeleBot - ERROR - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=25)
-2025-03-29 20:57:17,764 - TeleBot - ERROR - Exception traceback:
+2025-04-03 10:54:46,334 - __main__ - INFO - Bot ishga tushmoqda...
+2025-04-03 10:54:47,748 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: message to be replied not found
+2025-04-03 10:54:47,750 - TeleBot - ERROR - Exception traceback:
 Traceback (most recent call last):
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
-    response = conn.getresponse()
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 516, in getresponse
-    httplib_response = super().getresponse()
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 1428, in getresponse
-    response.begin()
-    ~~~~~~~~~~~~~~^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 331, in begin
-    version, status, reason = self._read_status()
-                              ~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 292, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 719, in readinto
-    return self._sock.recv_into(b)
-           ~~~~~~~~~~~~~~~~~~~~^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1304, in recv_into
-    return self.read(nbytes, buffer)
-           ~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1138, in read
-    return self._sslobj.read(len, buffer)
-           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-TimeoutError: The read operation timed out
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 667, in send
-    resp = conn.urlopen(
-        method=request.method,
-    ...<9 lines>...
-        chunked=chunked,
-    )
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
-    retries = retries.increment(
-        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
-    )
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\retry.py", line 474, in increment
-    raise reraise(type(error), error, _stacktrace)
-          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\util.py", line 39, in reraise
-    raise value
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
-    response = self._make_request(
-        conn,
-    ...<10 lines>...
-        **response_kw,
-    )
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 536, in _make_request
-    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
-    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 367, in _raise_timeout
-    raise ReadTimeoutError(
-        self, url, f"Read timed out. (read timeout={timeout_value})"
-    ) from err
-urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=25)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
-    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                 *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
-    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
-    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                            logger_level=logger_level, allowed_updates=allowed_updates)
-                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
-    raise e
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
-    polling_thread.raise_exceptions()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
     raise self.exception_info
   File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 93, in run
     task(*args, **kwargs)
     ~~~~^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
-    updates = self.get_updates(offset=(self.last_update_id + 1),
-                               allowed_updates=allowed_updates,
-                               timeout=timeout, long_polling_timeout=long_polling_timeout)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
-    json_updates = apihelper.get_updates(
-        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
-        long_polling_timeout=long_polling_timeout)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 332, in get_updates
-    return _make_request(token, method_url, params=payload)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
-    result = _get_req_session().request(
-        method, request_url, params=params, files=files,
-        timeout=(connect_timeout, read_timeout), proxies=proxy)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
-    resp = self.send(prep, **send_kwargs)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
-    r = adapter.send(request, **kwargs)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 713, in send
-    raise ReadTimeout(e, request=request)
-requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=25)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 9233, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\kino.py", line 117, in send_welcome
+    bot.reply_to(message, text)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 5949, in reply_to
+    return self.send_message(message.chat.id, text, reply_parameters=reply_parameters, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1800, in send_message
+    apihelper.send_message(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        self.token, chat_id, text,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        reply_parameters=reply_parameters, link_preview_options=link_preview_options, business_connection_id=business_connection_id,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        message_effect_id=message_effect_id, allow_paid_broadcast=allow_paid_broadcast))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 275, in send_message
+    return _make_request(token, method_url, params=payload, method='post')
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: message to be replied not found
 
-2025-03-29 20:57:35,040 - __main__ - INFO - Bot ishga tushmoqda...
-2025-03-29 21:05:04,127 - __main__ - INFO - Bot ishga tushmoqda...
-2025-03-29 21:10:49,981 - TeleBot - ERROR - Infinity polling exception: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
-2025-03-29 21:10:49,997 - TeleBot - ERROR - Exception traceback:
+2025-04-03 11:05:35,100 - __main__ - INFO - Bot ishga tushmoqda...
+2025-04-03 11:31:23,580 - TeleBot - ERROR - Infinity polling exception: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-04-03 11:31:23,592 - TeleBot - ERROR - Exception traceback:
 Traceback (most recent call last):
   File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
     response = self._make_request(
@@ -207,272 +135,6 @@ Traceback (most recent call last):
                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
     raise e
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
-    self.worker_pool.raise_exceptions()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
-    raise self.exception_info
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 93, in run
-    task(*args, **kwargs)
-    ~~~~^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 9233, in _run_middlewares_and_handler
-    result = handler['function'](message)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\kino.py", line 103, in admin_panel
-    bot.send_message(
-    ~~~~~~~~~~~~~~~~^
-        message.chat.id,
-        ^^^^^^^^^^^^^^^^
-        "\U0001f3e0 Admin panelga xush kelibsiz. Quyidagi tugmalardan birini tanlang:",
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        reply_markup=markup
-        ^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1800, in send_message
-    apihelper.send_message(
-    ~~~~~~~~~~~~~~~~~~~~~~^
-        self.token, chat_id, text,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<2 lines>...
-        reply_parameters=reply_parameters, link_preview_options=link_preview_options, business_connection_id=business_connection_id,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        message_effect_id=message_effect_id, allow_paid_broadcast=allow_paid_broadcast))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 275, in send_message
-    return _make_request(token, method_url, params=payload, method='post')
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
-    result = _get_req_session().request(
-        method, request_url, params=params, files=files,
-        timeout=(connect_timeout, read_timeout), proxies=proxy)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
-    resp = self.send(prep, **send_kwargs)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
-    r = adapter.send(request, **kwargs)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 682, in send
-    raise ConnectionError(err, request=request)
-requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
-
-2025-03-29 21:11:20,124 - TeleBot - ERROR - Infinity polling exception: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
-2025-03-29 21:11:20,129 - TeleBot - ERROR - Exception traceback:
-Traceback (most recent call last):
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
-    response = self._make_request(
-        conn,
-    ...<10 lines>...
-        **response_kw,
-    )
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
-    response = conn.getresponse()
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 516, in getresponse
-    httplib_response = super().getresponse()
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 1428, in getresponse
-    response.begin()
-    ~~~~~~~~~~~~~~^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 331, in begin
-    version, status, reason = self._read_status()
-                              ~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 292, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 719, in readinto
-    return self._sock.recv_into(b)
-           ~~~~~~~~~~~~~~~~~~~~^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1304, in recv_into
-    return self.read(nbytes, buffer)
-           ~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1138, in read
-    return self._sslobj.read(len, buffer)
-           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 667, in send
-    resp = conn.urlopen(
-        method=request.method,
-    ...<9 lines>...
-        chunked=chunked,
-    )
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
-    retries = retries.increment(
-        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
-    )
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\retry.py", line 474, in increment
-    raise reraise(type(error), error, _stacktrace)
-          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
-    response = self._make_request(
-        conn,
-    ...<10 lines>...
-        **response_kw,
-    )
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
-    response = conn.getresponse()
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 516, in getresponse
-    httplib_response = super().getresponse()
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 1428, in getresponse
-    response.begin()
-    ~~~~~~~~~~~~~~^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 331, in begin
-    version, status, reason = self._read_status()
-                              ~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 292, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 719, in readinto
-    return self._sock.recv_into(b)
-           ~~~~~~~~~~~~~~~~~~~~^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1304, in recv_into
-    return self.read(nbytes, buffer)
-           ~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1138, in read
-    return self._sslobj.read(len, buffer)
-           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
-    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                 *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
-    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
-    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                            logger_level=logger_level, allowed_updates=allowed_updates)
-                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
-    raise e
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
-    self.worker_pool.raise_exceptions()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
-    raise self.exception_info
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 93, in run
-    task(*args, **kwargs)
-    ~~~~^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 9233, in _run_middlewares_and_handler
-    result = handler['function'](message)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\kino.py", line 103, in admin_panel
-    bot.send_message(
-    ~~~~~~~~~~~~~~~~^
-        message.chat.id,
-        ^^^^^^^^^^^^^^^^
-        "\U0001f3e0 Admin panelga xush kelibsiz. Quyidagi tugmalardan birini tanlang:",
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        reply_markup=markup
-        ^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1800, in send_message
-    apihelper.send_message(
-    ~~~~~~~~~~~~~~~~~~~~~~^
-        self.token, chat_id, text,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<2 lines>...
-        reply_parameters=reply_parameters, link_preview_options=link_preview_options, business_connection_id=business_connection_id,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        message_effect_id=message_effect_id, allow_paid_broadcast=allow_paid_broadcast))
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 275, in send_message
-    return _make_request(token, method_url, params=payload, method='post')
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
-    result = _get_req_session().request(
-        method, request_url, params=params, files=files,
-        timeout=(connect_timeout, read_timeout), proxies=proxy)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
-    resp = self.send(prep, **send_kwargs)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
-    r = adapter.send(request, **kwargs)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 682, in send
-    raise ConnectionError(err, request=request)
-requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
-
-2025-03-29 21:14:51,052 - __main__ - INFO - Bot ishga tushmoqda...
-2025-03-29 21:20:48,006 - TeleBot - ERROR - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=25)
-2025-03-29 21:20:48,016 - TeleBot - ERROR - Exception traceback:
-Traceback (most recent call last):
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
-    response = conn.getresponse()
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 516, in getresponse
-    httplib_response = super().getresponse()
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 1428, in getresponse
-    response.begin()
-    ~~~~~~~~~~~~~~^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 331, in begin
-    version, status, reason = self._read_status()
-                              ~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 292, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 719, in readinto
-    return self._sock.recv_into(b)
-           ~~~~~~~~~~~~~~~~~~~~^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1304, in recv_into
-    return self.read(nbytes, buffer)
-           ~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1138, in read
-    return self._sslobj.read(len, buffer)
-           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-TimeoutError: The read operation timed out
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 667, in send
-    resp = conn.urlopen(
-        method=request.method,
-    ...<9 lines>...
-        chunked=chunked,
-    )
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
-    retries = retries.increment(
-        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
-    )
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\retry.py", line 474, in increment
-    raise reraise(type(error), error, _stacktrace)
-          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\util.py", line 39, in reraise
-    raise value
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
-    response = self._make_request(
-        conn,
-    ...<10 lines>...
-        **response_kw,
-    )
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 536, in _make_request
-    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
-    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 367, in _raise_timeout
-    raise ReadTimeoutError(
-        self, url, f"Read timed out. (read timeout={timeout_value})"
-    ) from err
-urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=25)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
-    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                 *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
-    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
-    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                            logger_level=logger_level, allowed_updates=allowed_updates)
-                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
-    raise e
   File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
     polling_thread.raise_exceptions()
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
@@ -499,21 +161,12 @@ Traceback (most recent call last):
     resp = self.send(prep, **send_kwargs)
   File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
     r = adapter.send(request, **kwargs)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 713, in send
-    raise ReadTimeout(e, request=request)
-requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=25)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
 
-2025-03-29 21:24:13,754 - __main__ - INFO - Bot ishga tushmoqda...
-2025-03-29 21:35:01,317 - __main__ - INFO - Bot ishga tushmoqda...
-2025-03-29 21:43:18,051 - __main__ - INFO - Bot ishga tushmoqda...
-2025-03-29 21:44:12,526 - __main__ - ERROR - Obunani tekshirishda xato: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: chat not found
-2025-03-29 21:44:35,968 - __main__ - ERROR - Obunani tekshirishda xato: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: chat not found
-2025-03-29 21:44:56,426 - __main__ - INFO - Bot ishga tushmoqda...
-2025-03-29 21:45:08,740 - __main__ - ERROR - Obunani tekshirishda xato: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: chat not found
-2025-03-29 21:45:50,326 - __main__ - INFO - Bot ishga tushmoqda...
-2025-03-29 21:47:32,296 - __main__ - INFO - Bot ishga tushmoqda...
-2025-03-29 21:47:47,303 - TeleBot - ERROR - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getMe (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002AFFC1C7380>, 'Connection to api.telegram.org timed out. (connect timeout=15)'))
-2025-03-29 21:47:47,370 - TeleBot - ERROR - Exception traceback:
+2025-04-03 11:31:26,646 - TeleBot - ERROR - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CEEF3B10>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2025-04-03 11:31:26,650 - TeleBot - ERROR - Exception traceback:
 Traceback (most recent call last):
   File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
     sock = connection.create_connection(
@@ -521,12 +174,13 @@ Traceback (most recent call last):
     ...<2 lines>...
         socket_options=self.socket_options,
     )
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
-    raise err
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
-    sock.connect(sa)
-    ~~~~~~~~~~~~^^^^
-TimeoutError: timed out
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 975, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
 
 The above exception was the direct cause of the following exception:
 
@@ -548,11 +202,9 @@ Traceback (most recent call last):
   File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 704, in connect
     self.sock = sock = self._new_conn()
                        ~~~~~~~~~~~~~~^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 207, in _new_conn
-    raise ConnectTimeoutError(
-    ...<2 lines>...
-    ) from e
-urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x000002AFFC1C7380>, 'Connection to api.telegram.org timed out. (connect timeout=15)')
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x00000246CEEF3B10>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
 
 The above exception was the direct cause of the following exception:
 
@@ -570,7 +222,644 @@ Traceback (most recent call last):
   File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
     raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getMe (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002AFFC1C7380>, 'Connection to api.telegram.org timed out. (connect timeout=15)'))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CEEF3B10>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            logger_level=logger_level, allowed_updates=allowed_updates)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 332, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+        method, request_url, params=params, files=files,
+        timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CEEF3B10>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2025-04-03 11:40:57,207 - TeleBot - ERROR - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CEEF1D10>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2025-04-03 11:40:57,215 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 975, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x00000246CEEF1D10>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CEEF1D10>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            logger_level=logger_level, allowed_updates=allowed_updates)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 332, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+        method, request_url, params=params, files=files,
+        timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CEEF1D10>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2025-04-03 11:41:00,221 - TeleBot - ERROR - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CEEF2710>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2025-04-03 11:41:00,224 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 975, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x00000246CEEF2710>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CEEF2710>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            logger_level=logger_level, allowed_updates=allowed_updates)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 332, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+        method, request_url, params=params, files=files,
+        timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CEEF2710>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2025-04-03 11:41:03,235 - TeleBot - ERROR - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CEEF1E50>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2025-04-03 11:41:03,241 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 975, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x00000246CEEF1E50>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CEEF1E50>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            logger_level=logger_level, allowed_updates=allowed_updates)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 332, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+        method, request_url, params=params, files=files,
+        timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CEEF1E50>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2025-04-03 11:41:06,254 - TeleBot - ERROR - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CF4742D0>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2025-04-03 11:41:06,263 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 975, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x00000246CF4742D0>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CF4742D0>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            logger_level=logger_level, allowed_updates=allowed_updates)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 332, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+        method, request_url, params=params, files=files,
+        timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CF4742D0>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2025-04-03 11:41:09,276 - TeleBot - ERROR - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CF4747D0>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2025-04-03 11:41:09,282 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 975, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x00000246CF4747D0>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CF4747D0>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            logger_level=logger_level, allowed_updates=allowed_updates)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 332, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+        method, request_url, params=params, files=files,
+        timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=1&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000246CF4747D0>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2025-04-03 08:41:34,446 - __main__ - INFO - Bot ishga tushmoqda...
+2025-04-03 08:41:46,488 - TeleBot - ERROR - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getMe (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001B35975FA10>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2025-04-03 08:41:46,504 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 975, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000001B35975FA10>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getMe (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001B35975FA10>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
 
 During handling of the above exception, another exception occurred:
 
@@ -601,12 +890,185 @@ Traceback (most recent call last):
     resp = self.send(prep, **send_kwargs)
   File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
     r = adapter.send(request, **kwargs)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 688, in send
-    raise ConnectTimeout(e, request=request)
-requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getMe (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002AFFC1C7380>, 'Connection to api.telegram.org timed out. (connect timeout=15)'))
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getMe (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001B35975FA10>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
 
-2025-03-29 21:48:29,776 - TeleBot - ERROR - Infinity polling exception: name 'process_ad' is not defined
-2025-03-29 21:48:29,781 - TeleBot - ERROR - Exception traceback:
+2025-04-03 08:42:01,532 - TeleBot - ERROR - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getMe (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001B359793250>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2025-04-03 08:42:01,541 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 975, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000001B359793250>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getMe (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001B359793250>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1195, in polling
+    logger.info('Starting your bot with username: [@%s]', self.user.username)
+                                                          ^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 306, in user
+    self._user = self.get_me()
+                 ~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1382, in get_me
+    apihelper.get_me(self.token)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 202, in get_me
+    return _make_request(token, method_url)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+        method, request_url, params=params, files=files,
+        timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getMe (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001B359793250>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2025-04-03 08:43:27,315 - TeleBot - ERROR - Infinity polling exception: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-04-03 08:43:27,329 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
     self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
@@ -622,23 +1084,97 @@ Traceback (most recent call last):
                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
     raise e
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
-    self.worker_pool.raise_exceptions()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
     raise self.exception_info
   File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 93, in run
     task(*args, **kwargs)
     ~~~~^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 9233, in _run_middlewares_and_handler
-    result = handler['function'](message)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\kino.py", line 162, in callback_handler
-    bot.register_next_step_handler(msg, process_ad)
-                                        ^^^^^^^^^^
-NameError: name 'process_ad' is not defined
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 332, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+        method, request_url, params=params, files=files,
+        timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
 
-2025-03-29 21:48:54,432 - TeleBot - ERROR - Infinity polling exception: name 'process_ad' is not defined
-2025-03-29 21:48:54,446 - TeleBot - ERROR - Exception traceback:
+2025-04-03 08:43:42,395 - TeleBot - ERROR - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=562350562&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001B359793610>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2025-04-03 08:43:42,407 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 975, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000001B359793610>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=562350562&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001B359793610>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
     self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
@@ -654,18 +1190,35 @@ Traceback (most recent call last):
                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
     raise e
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
-    self.worker_pool.raise_exceptions()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
     raise self.exception_info
   File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\util.py", line 93, in run
     task(*args, **kwargs)
     ~~~~^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 9233, in _run_middlewares_and_handler
-    result = handler['function'](message)
-  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\kino.py", line 162, in callback_handler
-    bot.register_next_step_handler(msg, process_ad)
-                                        ^^^^^^^^^^
-NameError: name 'process_ad' is not defined
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 332, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+        method, request_url, params=params, files=files,
+        timeout=(connect_timeout, read_timeout), proxies=proxy)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\user\OneDrive\Ishchi stol\kino bot\.venv\Lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7922695836:***********************************/getUpdates?offset=562350562&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001B359793610>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
 
+2025-04-03 08:44:34,179 - __main__ - INFO - Bot ishga tushmoqda...
+2025-04-03 08:49:41,015 - __main__ - INFO - Bot ishga tushmoqda...
