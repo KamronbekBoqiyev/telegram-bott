@@ -95,6 +95,7 @@ def check_subscription(user_id: int) -> bool:
 # Bot komandalari
 @bot.message_handler(commands=['start'])
 def send_welcome(message: types.Message):
+    
     try:
         update_user(message.from_user)
         
@@ -339,16 +340,52 @@ def show_statistics(message: types.Message):
         logger.error(f"Statistics error: {e}")
         bot.send_message(message.chat.id, "❌ Statistikani yuklashda xatolik yuz berdi.")
 
+
+
+        
+
 def process_ad(message: types.Message):
     try:
         if not is_admin(message.from_user.id):
             return
             
-        # Bu yerda reklamani barcha foydalanuvchilarga yuborish logikasi
-        bot.send_message(message.chat.id, "⚠️ Reklama yuborish funksiyasi hozircha ishlamaydi. Iltimos, keyinroq urinib ko'ring.")
+        # Foydalanuvchilar ro'yxatini olish
+        with get_db_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT user_id FROM users")
+            users = cursor.fetchall()
+            
+        # Reklamani yuborish
+        success = 0
+        failures = 0
+        
+        for user in users:
+            try:
+                if message.content_type == 'text':
+                    bot.send_message(user['user_id'], message.text)
+                elif message.content_type == 'photo':
+                    bot.send_photo(user['user_id'], message.photo[-1].file_id, caption=message.caption)
+                elif message.content_type == 'video':
+                    bot.send_video(user['user_id'], message.video.file_id, caption=message.caption)
+                elif message.content_type == 'document':
+                    bot.send_document(user['user_id'], message.document.file_id, caption=message.caption)
+                success += 1
+            except Exception as e:
+                logger.error(f"Reklamani {user['user_id']} ga yuborishda xato: {e}")
+                failures += 1
+        
+        bot.send_message(
+            message.chat.id,
+            f"✅ Reklama yuborildi!\n\n"
+            f"✔️ Muvaffaqiyatli: {success}\n"
+            f"❌ Muvaffaqiyatsiz: {failures}"
+        )
     except Exception as e:
         logger.error(f"Ad process error: {e}")
         bot.send_message(message.chat.id, "❌ Reklama yuborishda xatolik yuz berdi.")
+
+
+
 
 # Dasturni ishga tushirish
 if __name__ == "__main__":
