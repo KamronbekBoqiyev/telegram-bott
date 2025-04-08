@@ -10,6 +10,9 @@ from telebot import TeleBot, types
 from telebot.util import quick_markup
 from dotenv import load_dotenv
 
+
+
+
 # 1. SOZLAMALAR VA BOSHLANG'ICH KONFIGURATSIYA
 load_dotenv()
 
