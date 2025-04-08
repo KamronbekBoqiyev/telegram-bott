@@ -10,3 +10,14 @@ __pycache__/
 *.log
 bot.log
 logs/
+
+project/
+├── .env                  # Konfiguratsiya o'zgaruvchilari
+├── handlers/
+│   ├── __init__.py       # Bo'sh fayl (package uchun zarur)
+│   ├── admin.py          # Admin komandalari
+│   ├── inline.py         # Inline tugmalar va callback'lar
+│   ├── media.py          # Media bilan ishlash
+│   └── start.py          # Start komandasi va boshlang'ich handlerlar
+├── database.py           # Ma'lumotlar bazasi funktsiyalari
+└── kino.py               # Asosiy bot fayli
