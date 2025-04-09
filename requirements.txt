@@ -1,4 +1,3 @@
-﻿python-dotenv
-pyTelegramBotAPI
-Flask
-sqlite3
+﻿pyTelegramBotAPI
+flask
+python-dotenv
